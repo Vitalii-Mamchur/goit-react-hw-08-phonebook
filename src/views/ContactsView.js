@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import Form from "../components/Form";
 import Filter from "../components/Filter";
 import Contacts from "../components/Contacts";
+import "./Views.css";
 
 class ContactsView extends React.Component {
   render() {

@@ -13,11 +13,17 @@ import {
   changeFilter,
 } from "./phonebook-actions";
 
-let contacts = [];
+// const contacts = [];
 
-const items = createReducer(contacts, {
+const items = createReducer([], {
   [fetchContactSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: (state, { payload }) => [...state, payload],
+  // [addContactSuccess]: (state, { payload }) => {
+  //   if (state.map((contact) => contact.name).includes(payload.name)) {
+  //     return alert(`${payload.name} is already exist`);
+  //   }
+  //   return [...state, payload];
+  // },
   [deleteContactSuccess]: (state, { payload }) =>
     state.filter((contact) => contact.id !== payload),
 });

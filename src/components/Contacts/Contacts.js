@@ -8,6 +8,7 @@ import {
 } from "../../redux/Phonebook/phonebook-selectors";
 import PropTypes from "prop-types";
 import styles from "./Contacts.module.css";
+import { Button } from "@material-ui/core";
 
 const Contacts = ({ contacts, onRemoveContact }) => {
   return (
@@ -17,16 +18,17 @@ const Contacts = ({ contacts, onRemoveContact }) => {
           {contact.name + " : " + contact.number}
           {
             <div>
-              <button
-                className={styles.contacts_button}
+              <Button
                 type="button"
+                variant="outlined"
+                color="primary"
                 name="delete"
                 onClick={() => {
                   onRemoveContact(contact.id);
                 }}
               >
                 delete
-              </button>
+              </Button>
             </div>
           }
         </li>

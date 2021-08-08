@@ -4,17 +4,6 @@ import { authOperations } from "../redux/auth";
 import "./Views.css";
 import { Button } from "@material-ui/core";
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "Flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
-
 class RegisterView extends Component {
   state = {
     name: "",
@@ -38,43 +27,46 @@ class RegisterView extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div className="RegisterContainer">
+      <div className="Container">
         <div className="RegisterSection">
-          <h1 className="RegisterTitle">Registration</h1>
+          <h1 className="Title">Create account</h1>
           <form
             onSubmit={this.handleSubmit}
-            style={styles.form}
+            className="form"
             autoComplete="off"
           >
-            <label style={styles.label}>
-              Имя
+            <label className="label">
+              Name
               <input
                 type="text"
                 name="name"
                 value={name}
                 onChange={this.handleChange}
+                placeholder="Enter name"
               />
             </label>
-            <label style={styles.label}>
-              Почта
+            <label className="label">
+              Email
               <input
                 type="email"
                 name="email"
                 value={email}
                 onChange={this.handleChange}
+                placeholder="Enter email"
               />
             </label>
-            <label style={styles.label}>
-              Пароль
+            <label className="label">
+              Password
               <input
                 type="password"
                 name="password"
                 value={password}
                 onChange={this.handleChange}
+                placeholder="Enter password"
               />
             </label>
-            <Button type="submit" variant="contained">
-              Зарегистрироваться
+            <Button type="submit" variant="contained" color="primary">
+              SIGN UP
             </Button>
           </form>
         </div>

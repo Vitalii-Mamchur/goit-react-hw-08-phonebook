@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addContact } from "../../redux/Phonebook/phonebook-operations";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./Form.module.css";
+import { Button } from "@material-ui/core";
 import PropTypes from "prop-types";
 
 class Form extends Component {
@@ -88,9 +89,9 @@ class Form extends Component {
           />
         </label>
 
-        <button className={styles.button} name="add" type="submit">
+        <Button name="add" type="submit" variant="outlined" color="primary">
           Add contact
-        </button>
+        </Button>
       </form>
     );
   }

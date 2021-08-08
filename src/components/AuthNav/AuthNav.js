@@ -11,7 +11,7 @@ const AuthNav = () => (
           className="NavLink"
           activeClassName="NavLink--active"
         >
-          Сheck in
+          Create account
         </NavLink>
       </li>
       <li>

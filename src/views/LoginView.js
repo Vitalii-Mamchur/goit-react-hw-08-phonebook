@@ -4,16 +4,6 @@ import { authOperations } from "../redux/auth";
 import "./Views.css";
 import { Button } from "@material-ui/core";
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "Flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
 class LoginView extends Component {
   state = {
     email: "",
@@ -34,34 +24,36 @@ class LoginView extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className="LoginContainer">
+      <div className="Container">
         <div className="LoginSection">
-          <h1 className="LoginTitle">Login</h1>
+          <h1 className="Title">Login</h1>
           <form
             onSubmit={this.handleSubmit}
-            style={styles.form}
+            className="form"
             autoComplete="off"
           >
-            <label style={styles.label}>
-              Почта
+            <label className="label">
+              Email
               <input
                 type="email"
                 name="email"
                 value={email}
                 onChange={this.handleChange}
+                placeholder="Enter email"
               />
             </label>
-            <label style={styles.label}>
-              Пароль
+            <label className="label">
+              Password
               <input
                 type="password"
                 name="password"
                 value={password}
                 onChange={this.handleChange}
+                placeholder="Enter password"
               />
             </label>
-            <Button type="submit" variant="contained">
-              Войти
+            <Button type="submit" variant="contained" color="primary">
+              LOG IN
             </Button>
           </form>
         </div>
