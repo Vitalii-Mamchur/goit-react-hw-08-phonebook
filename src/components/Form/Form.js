@@ -3,8 +3,19 @@ import { connect } from "react-redux";
 import { addContact } from "../../redux/Phonebook/phonebook-operations";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./Form.module.css";
+import PropTypes from "prop-types";
 
 class Form extends Component {
+  static defaultProps = {
+    name: "",
+    number: "",
+  };
+
+  static propTypes = {
+    name: PropTypes.string,
+    number: PropTypes.string,
+  };
+
   state = {
     name: "",
     number: "",
