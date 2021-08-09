@@ -22,13 +22,13 @@ class Form extends Component {
     number: "",
   };
 
-  formInputId = uuidv4();
+  formInputNameId = uuidv4();
+  formInputNumberId = uuidv4();
 
   handleChange = (e) => {
     // console.log(e.currentTarget);
     const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
-    this.setState({ id: this.formInputId });
   };
 
   handleSubmit = (e) => {
@@ -63,6 +63,7 @@ class Form extends Component {
           Name
           <input
             className={styles.formInput}
+            id={this.formInputNameId}
             type="text"
             value={this.state.name}
             onChange={this.handleChange}
@@ -78,6 +79,7 @@ class Form extends Component {
           Number
           <input
             className={styles.formInput}
+            id={this.formInputNumberId}
             type="tel"
             value={this.state.number}
             onChange={this.handleChange}

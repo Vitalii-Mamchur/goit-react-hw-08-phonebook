@@ -11,9 +11,9 @@ import {
   fetchContactError,
 } from "./phonebook-actions";
 
-// axios.defaults.baseURL =
-//   "https://my-json-server.typicode.com/Vitalii-Mamchur/goit-react-hw-07-phonebook";
-axios.defaults.baseURL = "http://localhost:4040";
+axios.defaults.baseURL =
+  "https://my-json-server.typicode.com/Vitalii-Mamchur/goit-react-hw-07-phonebook";
+// axios.defaults.baseURL = "http://localhost:4040";
 
 export const fetchContacts = () => (dispatch) => {
   dispatch(fetchContactRequest());
@@ -41,11 +41,22 @@ export const addContact =
       .catch((error) => dispatch(addContactError(error)));
   };
 
-export const deleteContact = (id) => (dispatch) => {
+// export const deleteContact = (id) => (dispatch) => {
+//   dispatch(deleteContactRequest());
+//   axios
+//     .delete(`/contacts/${id}`)
+//     .then(() => dispatch(deleteContactSuccess(id)))
+//     .catch((error) => dispatch(deleteContactError(error)));
+// };
+
+export const deleteContact = (id) => async (dispatch) => {
   dispatch(deleteContactRequest());
 
-  axios
-    .delete(`/contacts/${id}`)
-    .then(() => dispatch(deleteContactSuccess(id)))
-    .catch((error) => dispatch(deleteContactError(error)));
+  try {
+    await axios.delete(`/contacts/${id}`);
+
+    dispatch(deleteContactSuccess(id));
+  } catch (error) {
+    dispatch(deleteContactError(error.message));
+  }
 };
