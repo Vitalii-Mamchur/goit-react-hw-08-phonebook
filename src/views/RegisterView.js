@@ -65,7 +65,7 @@ class RegisterView extends Component {
                 placeholder="Enter password"
               />
             </label>
-            <Button type="submit" variant="contained" color="primary">
+            <Button type="submit" variant="outlined" color="primary">
               SIGN UP
             </Button>
           </form>

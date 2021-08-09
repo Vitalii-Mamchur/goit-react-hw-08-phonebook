@@ -52,7 +52,7 @@ class LoginView extends Component {
                 placeholder="Enter password"
               />
             </label>
-            <Button type="submit" variant="contained" color="primary">
+            <Button type="submit" variant="outlined" color="primary">
               LOG IN
             </Button>
           </form>
